@@ -5,38 +5,38 @@ import java.util.Date;
 public class Student {
 
     //Initialize variables
-    protected String id;
-    protected String name;
-    protected Date birthdate;
+    protected String sId;
+    protected String sName;
+    protected Date sBirthdate;
 
     //Constructor
-    public Student(String id, String name, Date birthdate) {
-        this.id = id;
-        this.name = name;
-        this.birthdate = birthdate;
+    public Student(String sId, String sName, Date sBirthdate) {
+        this.sId = sId;
+        this.sName = sName;
+        this.sBirthdate = sBirthdate;
     }
 
-    public String getId() {
-        return id;
+    public String getsId() {
+        return sId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setsId(String sId) {
+        this.sId = sId;
     }
 
-    public String getName() {
-        return name;
+    public String getsName() {
+        return sName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setsName(String sName) {
+        this.sName = sName;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public Date getsBirthdate() {
+        return sBirthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setsBirthdate(Date sBirthdate) {
+        this.sBirthdate = sBirthdate;
     }
 }
