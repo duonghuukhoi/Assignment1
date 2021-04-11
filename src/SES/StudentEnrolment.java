@@ -3,9 +3,6 @@ package SES;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -47,7 +44,7 @@ public class StudentEnrolment implements StudentEnrolmentManager{
 
     public static String[][] readFile() throws FileNotFoundException{
         int count=0;
-        Scanner scanner = new Scanner(new File("default.csv"));
+        Scanner scanner = new Scanner(new File("SES/default.csv"));
         List<List<String>> studentEnrolment = new ArrayList<>();
         while (scanner.hasNext()){
             String line = scanner.nextLine();
