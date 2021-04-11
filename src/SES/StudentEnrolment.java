@@ -3,10 +3,12 @@ package SES;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class StudentEnrolment implements StudentEnrolmentManager{
+
+public class    StudentEnrolment implements StudentEnrolmentManager{
 
     @Override
     public void add() {
@@ -33,24 +35,25 @@ public class StudentEnrolment implements StudentEnrolmentManager{
 
     }
     public static void main(String[] args) throws FileNotFoundException{
-        List<List<String>> studentEnrolment = new ArrayList<>();
-        Scanner scanner = new Scanner(new File("default.csv"));
+        String fileName = "default.csv";
+        List<List<String>> studentEnrolment = readFile(fileName);
+    }
+
+    public static List<List<String>> readFile(String fileName) throws FileNotFoundException{
+        Scanner scanner = new Scanner(new File(fileName));
+        List<List<String>> studentEnrolment = new ArrayList<List<String>>();
+        List<String> x = new ArrayList<String>();
+        System.out.println(Arrays.deepToString(studentEnrolment.toArray()));
         while (scanner.hasNext()){
             String line = scanner.nextLine();
             String element [] = line.split(",");
+            List<String> a = new ArrayList<String>();
             System.out.println(element[0]);
+            for (int i =0 ; i < element.length ; i++){
+                a.add(element[i]);
+            }
+            studentEnrolment.add(a);
         }
-    }
-
-    public static String[][] readFile() throws FileNotFoundException{
-        int count=0;
-        Scanner scanner = new Scanner(new File("SES/default.csv"));
-        List<List<String>> studentEnrolment = new ArrayList<>();
-        while (scanner.hasNext()){
-            String line = scanner.nextLine();
-            String element [] = line.split("");
-            System.out.println(element[0]);
-        }
-        return null;
+        return studentEnrolment;
     }
 }
