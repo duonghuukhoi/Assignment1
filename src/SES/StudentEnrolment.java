@@ -37,6 +37,7 @@ public class    StudentEnrolment implements StudentEnrolmentManager{
     public static void main(String[] args) throws FileNotFoundException{
         String fileName = "default.csv";
         List<List<String>> studentEnrolment = readFile(fileName);
+        ArrayList<Student> studentArrayList = new ArrayList<Student>();
     }
 
     public static List<List<String>> readFile(String fileName) throws FileNotFoundException{
