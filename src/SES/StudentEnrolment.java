@@ -86,7 +86,7 @@ public class    StudentEnrolment implements StudentEnrolmentManager {
         studentList.add(s);
         System.out.println(enrolmentList.size());
         for (int i = 1; i < enrolmentList.size(); i++) {
-            for (int j = 0; j < studentList.size(); i++){
+            for (int j = 0; j < (studentList.size()-1); i++){
                 System.out.println(studentList.size());
                 if (enrolmentList.get(i).get(j).equals(studentList.get(j).getsId())){
                     System.out.println("true");
