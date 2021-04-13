@@ -10,7 +10,6 @@ public class Student {
     protected String sId;
     protected String sName;
     protected Date sBirthdate;
-    ArrayList<Course> coursesList = new ArrayList<Course>();
 
     //Constructor
     public Student(String sId, String sName, Date sBirthdate) {
@@ -41,14 +40,6 @@ public class Student {
 
     public void setsBirthdate(Date sBirthdate) {
         this.sBirthdate = sBirthdate;
-    }
-
-    public ArrayList<Course> getCoursesList() {
-        return coursesList;
-    }
-
-    public void setCoursesList(ArrayList<Course> coursesList) {
-        this.coursesList = coursesList;
     }
 
     @Override

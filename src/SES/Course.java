@@ -8,7 +8,6 @@ public class Course {
     protected String cId;
     protected String cName;
     protected int noCredits;
-    ArrayList<Student> studentList = new ArrayList<Student>();
 
     //Constructor
     public Course(String cId, String cName, int noCredits) {
@@ -41,11 +40,9 @@ public class Course {
         this.noCredits = noCredits;
     }
 
-    public ArrayList<Student> getStudentList() {
-        return studentList;
+    @Override
+    public String toString() {
+        return ("Course ID:" + this.getcId()+" Course name:"+this.getcName()+" Credit:"+this.getNoCredits());
     }
 
-    public void setStudentList(ArrayList<Student> studentList) {
-        this.studentList = studentList;
-    }
 }
