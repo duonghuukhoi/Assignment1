@@ -47,8 +47,8 @@ public class StudentEnrolment implements StudentEnrolmentManager  {
     }
 
     @Override
-    public void add() {
-        setEnrolment(getEnrolment());
+    public void add(List<String> info) {
+        setEnrolment(this.enrolment.add(info));
     }
 
     @Override
@@ -68,6 +68,8 @@ public class StudentEnrolment implements StudentEnrolmentManager  {
 
     @Override
     public void getAll() {
-
+        for (int i = 0; i < enrolment.size();i++){
+            System.out.println(enrolment.get(i));
+        }
     }
 }

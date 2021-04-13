@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import java.text.ParseException;
@@ -32,6 +33,7 @@ public class Main {
         enrolmentList.setEnrolment(studentEnrolmentList);
         ArrayList <StudentEnrolment> studentEnrolment = removeDuplicateEnrolment(studentEnrolmentArrayList(fileName)); //Read and remove duplicates semester in the file
         studentEnrolment = removeDuplicateEnrolment(studentEnrolment);//Remove twice for better result
+        setValue(studentEnrolment,fileName);
         System.out.println("Menu:");
         System.out.println("1. Add");
         System.out.println("2. Update");
@@ -47,9 +49,20 @@ public class Main {
             String sID = input.next();
             System.out.println("Semester:");
             String semester =input.next();
-            System.out.println("Courses:");
+            System.out.println("CoursesID:");
             String[] courses = input.nextLine().split(",");
-            enrolmentList.add();
+            String sName;
+            Date dOB;
+            for(StudentEnrolment s: studentEnrolment){
+                for (int i = 0 ; i<s.getStudentArrayList().size();i++){
+                    if (s.getStudentArrayList().get(i).getsId().equals(sID)){
+                        sName = s.getStudentArrayList().get(i).getsName();
+                        dOB = s.getStudentArrayList().get(i).getsBirthdate();
+                    }
+                }
+            }
+            //List<String> info = new ArrayList<String>(sID,sName,dOB,);
+            //enrolmentList.add(info);
         }else if (option.equals("2")){
             System.out.println("Student ID:");
             String sID = input.next();
@@ -74,11 +87,21 @@ public class Main {
                 enrolmentList.delete();
             }
         }else if (option.equals("3")){
-
+            System.out.println("Student ID:");
+            String sID = input.next();
+            System.out.println("Course ID");
+            String sC = input.next();
+            enrolmentList.getOne();
         }else if (option.equals("4")){
-
+            enrolmentList.getAll();
         }else if (option.equals("5")){
+            System.out.println("Course ID:");
+            String cID = input.next();
+            for (int i = 0; i<enrolmentList.getEnrolment().size();i++){
+                if (enrolmentList.getEnrolment().get(i).get(3).equals(cID)){
 
+                }
+            }
         }else if (option.equals("6")){
 
         }else if (option.equals("7")){
