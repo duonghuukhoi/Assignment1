@@ -9,6 +9,7 @@ public class Course {
     protected String cName;
     protected int noCredits;
 
+
     //Constructor
     public Course(String cId, String cName, int noCredits) {
         this.cId = cId;

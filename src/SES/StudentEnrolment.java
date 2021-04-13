@@ -1,21 +1,14 @@
 package SES;
 
 import java.util.ArrayList;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
-import java.text.ParseException;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
-
-public class StudentEnrolment implements StudentEnrolmentManager {
+public class StudentEnrolment implements StudentEnrolmentManager  {
 
     ArrayList<Student> studentArrayList = new ArrayList<Student>();
     ArrayList<Course>  courseArrayList = new ArrayList<Course>();
     protected String semester;
+    List<List<String>> enrolment = new ArrayList<List<String>>();
 
     public StudentEnrolment(String semester) {
         this.semester = semester;
@@ -45,9 +38,17 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         this.semester = semester;
     }
 
+    public List<List<String>> getEnrolment() {
+        return enrolment;
+    }
+
+    public void setEnrolment(List<List<String>> enrolment) {
+        this.enrolment = enrolment;
+    }
+
     @Override
     public void add() {
-
+        setEnrolment(getEnrolment());
     }
 
     @Override

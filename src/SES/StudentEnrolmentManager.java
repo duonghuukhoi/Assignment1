@@ -1,5 +1,7 @@
 package SES;
 
+import java.util.ArrayList;
+
 public interface StudentEnrolmentManager {
     public void add();
     public void update();
