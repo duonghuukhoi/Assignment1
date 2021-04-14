@@ -1,7 +1,12 @@
 package SES;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.text.DateFormat;
+
 
 public class StudentEnrolment implements StudentEnrolmentManager  {
 
@@ -47,29 +52,30 @@ public class StudentEnrolment implements StudentEnrolmentManager  {
     }
 
     @Override
-    public void add(List<String> info) {
-        setEnrolment(this.enrolment.add(info));
+    public void add() {
+        System.out.println("Added");
     }
 
     @Override
     public void update() {
-
+        System.out.println("Updated");
     }
 
     @Override
     public void delete() {
+        System.out.println("Deleted");
 
     }
 
     @Override
-    public void getOne() {
-
+    public void getOne(String sID,String  sName,String dob,String cID,String cName,String credit,String semester){
+        System.out.println(sID+","+sName+","+dob+","+cID+","+cName+","+credit+","+semester);
     }
 
     @Override
     public void getAll() {
         for (int i = 0; i < enrolment.size();i++){
-            System.out.println(enrolment.get(i));
+            System.out.println(enrolment.get(i).get(0)+","+enrolment.get(i).get(1)+","+enrolment.get(i).get(2)+","+enrolment.get(i).get(3)+","+enrolment.get(i).get(4)+","+enrolment.get(i).get(5)+","+enrolment.get(i).get(6));
         }
     }
 }
